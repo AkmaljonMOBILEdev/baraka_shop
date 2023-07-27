@@ -1,13 +1,11 @@
-import 'package:baraka_shop/utils/helper_sizebox_and_utils.dart';
+import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
+import '../../../utils/images.dart';
 
-import '../../../utils/app_images.dart';
-
-class AuthorisationSocialMedia extends StatelessWidget {
-  const AuthorisationSocialMedia({Key? key}) : super(key: key);
+class OtherAuthWays extends StatelessWidget {
+  const OtherAuthWays({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

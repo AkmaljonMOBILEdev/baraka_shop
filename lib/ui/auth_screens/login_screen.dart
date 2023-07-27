@@ -1,29 +1,27 @@
-import 'package:baraka_shop/utils/helper_sizebox_and_utils.dart';
+import 'package:baraka_shop/ui/auth_screens/widget/or_auth_widget.dart';
+import 'package:baraka_shop/ui/auth_screens/widget/other_auth_ways.dart';
+import 'package:baraka_shop/utils/icons.dart';
+import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../providers/auth_provider.dart';
 import '../../utils/colors.dart';
-import '../../widget/authorisation_social_media.dart';
-import '../../widget/global_button.dart';
-import '../../widget/global_text_fields.dart';
-import '../login_page/login_page.dart';
-import '../login_page/widget/or_auth_widget.dart';
+import '../widget/global_button.dart';
+import 'sign_up_screen.dart';
+import '../widget/global_text_field.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.c_F9FAFB,
+      backgroundColor: AppColors.cF9FAFB,
       appBar: AppBar(
-        backgroundColor: AppColors.c_F9FAFB,
+        backgroundColor: AppColors.cF9FAFB,
         elevation: 0,
       ),
       body: Padding(
@@ -38,41 +36,33 @@ class _SignUpPageState extends State<SignUpPage> {
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .copyWith(color: AppColors.c_FC6828),
+                    .copyWith(color: AppColors.cFC6828),
               ),
             ),
             70.ph,
             GlobalTextField(
-                icon: Icon(Icons.account_circle),
-                hintText: "username",
+                icon: AppIcons.username,
+                hintText: "Enter your username",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
-                textAlign: TextAlign.start,
-                controller: context.read<AuthProvider>().emailController),
+                // controller: context.read<AuthProvider>().emailController
+                ),
             20.ph,
             GlobalTextField(
-                icon: Icon(Icons.lock),
-                hintText: "password",
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                textAlign: TextAlign.start,
-                controller: context.read<AuthProvider>().passwordController),
-            20.ph,
-            GlobalTextField(
-                icon: Icon(Icons.lock),
-                hintText: "confirm password",
+                icon: AppIcons.password,
+                hintText: "Enter you password",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
-                textAlign: TextAlign.start,
-                controller: context.read<AuthProvider>().passwordController),
+                // controller: context.read<AuthProvider>().passwordController
+            ),
             70.ph,
             GlobalButton(title: "Login", onTap: () {}),
             40.ph,
-          const  OrAuthWidget(),
+            const OrAuthWidget(),
             50.ph,
-            const  Padding(
+            const Padding(
               padding:  EdgeInsets.symmetric(horizontal: 80),
-              child: AuthorisationSocialMedia(),
+              child: OtherAuthWays(),
             ),
             80.ph,
             Row(
@@ -81,7 +71,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Text(
                   "Don’t have an account?",
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: AppColors.c_040415.withOpacity(0.2),
+                        color: AppColors.c040415.withOpacity(0.2),
                       ),
                 ),
                 TextButton(
@@ -89,10 +79,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => const SignUpScreen(),
                         ));
                   },
-                  child: Text("Sign Up"),
+                  child: const Text("Sign Up"),
                 ),
               ],
             )
