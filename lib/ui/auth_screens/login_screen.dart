@@ -1,5 +1,6 @@
 import 'package:baraka_shop/ui/auth_screens/widget/or_auth_widget.dart';
 import 'package:baraka_shop/ui/auth_screens/widget/other_auth_ways.dart';
+import 'package:baraka_shop/ui/widget/global_logo_name.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
@@ -31,16 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: ListView(
           children: [
             50.ph,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 80.0),
-              child: Text(
-                "Login to b - Shop",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: AppColors.cFC6828),
-              ),
-            ),
+          const  Center(child: GlobalLogoName(),),
             70.ph,
             GlobalTextField(
                 icon: AppIcons.username,
