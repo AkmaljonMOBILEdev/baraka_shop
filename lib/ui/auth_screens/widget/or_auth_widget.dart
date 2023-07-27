@@ -1,4 +1,4 @@
-import 'package:baraka_shop/utils/helper_sizebox_and_utils.dart';
+import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,7 +13,7 @@ class OrAuthWidget extends StatelessWidget {
     return    Row(
       children: [
         Container(
-          color: AppColors.c_040415.withOpacity(0.2),
+          color: AppColors.c040415.withOpacity(0.2),
           width: 155.w,
           height: 1,
         ),
@@ -23,11 +23,11 @@ class OrAuthWidget extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .bodyLarge!
-              .copyWith(color: AppColors.c_040415),
+              .copyWith(color: AppColors.c040415),
         ),
         9.pw,
         Container(
-          color: AppColors.c_040415.withOpacity(0.2),
+          color: AppColors.c040415.withOpacity(0.2),
           width: 155.w,
           height: 1,
         ),

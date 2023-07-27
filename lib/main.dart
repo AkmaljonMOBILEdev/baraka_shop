@@ -1,14 +1,10 @@
 import 'package:baraka_shop/providers/auth_provider.dart';
-import 'package:baraka_shop/splash_screen/splash_screen.dart';
+import 'package:baraka_shop/ui/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
+void main(){
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
