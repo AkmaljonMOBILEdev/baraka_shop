@@ -1,10 +1,13 @@
 import 'package:baraka_shop/providers/auth_provider.dart';
-import 'package:baraka_shop/ui/splash_screen/splash_screen.dart';
+import 'package:baraka_shop/utils/app_routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-void main(){
+Future<void> main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
@@ -30,7 +33,8 @@ class MyApp extends StatelessWidget {
           return  MaterialApp(
             theme: ThemeData.dark(),
             debugShowCheckedModeBanner: false,
-            home: SplashScreen(),
+            initialRoute: RouteNames.splashScreen,
+            onGenerateRoute: AppRoute.generateRoute,
           );
         });
   }
