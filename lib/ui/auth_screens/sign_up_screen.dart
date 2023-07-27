@@ -4,8 +4,7 @@ import 'package:baraka_shop/ui/widget/global_logo_name.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../providers/auth_provider.dart';
+
 import '../../utils/colors.dart';
 import '../widget/global_button.dart';
 import '../widget/global_text_field.dart';
@@ -24,11 +23,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: AppColors.cF9FAFB,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
         child: ListView(
           children: [
+
             50.ph,
-          const  Center(child: GlobalLogoName(),),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 80.0),
+              child: Text(
+                "Sign up b - Shop",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: AppColors.cFC6828),
+              ),
+            ),
             70.ph,
             GlobalTextField(
               icon: AppIcons.username,
@@ -36,6 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.next,
               controller: context.read<AuthProvider>().usernameController,
+
             ),
             20.ph,
             GlobalTextField(
@@ -50,6 +60,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 hintText: "Enter your password",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
+
+
                 controller: context.read<AuthProvider>().passwordController),
             70.ph,
             GlobalButton(
@@ -63,9 +75,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             50.ph,
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 80),
+
               child: OtherAuthWays(),
             ),
-            80.ph,
+            60.ph,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
