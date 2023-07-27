@@ -1,8 +1,10 @@
 import 'package:baraka_shop/ui/auth_screens/widget/or_auth_widget.dart';
 import 'package:baraka_shop/ui/auth_screens/widget/other_auth_ways.dart';
+import 'package:baraka_shop/ui/widget/global_logo_name.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../utils/colors.dart';
 import '../widget/global_button.dart';
 import '../widget/global_text_field.dart';
@@ -21,21 +23,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: AppColors.cF9FAFB,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
         child: ListView(
           children: [
-            50.ph,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 80.0),
-              child: Text(
-                "Sign up b - Shop",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: AppColors.cFC6828),
-              ),
-            ),
-            70.ph,
+            40.ph,
+            const GlobalLogoName(),
+            40.ph,
             const GlobalTextField(
                 icon: AppIcons.username,
                 hintText: "Enter your username",
@@ -59,16 +52,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 textInputAction: TextInputAction.done,
                 // controller: context.read<AuthProvider>().passwordController
           ),
-            70.ph,
+            20.ph,
+            const GlobalTextField(
+              icon: AppIcons.password,
+              hintText: "Confirm password",
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.done,
+              // controller: context.read<AuthProvider>().passwordController
+            ),
+            60.ph,
             GlobalButton(title: "Sign Up", onTap: () {}),
             40.ph,
             const OrAuthWidget(),
-            50.ph,
+            40.ph,
             const  Padding(
               padding:  EdgeInsets.symmetric(horizontal: 80),
               child: OtherAuthWays(),
             ),
-            80.ph,
+            60.ph,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
