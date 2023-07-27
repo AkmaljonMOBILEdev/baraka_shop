@@ -4,7 +4,7 @@ import 'package:baraka_shop/ui/widget/global_logo_name.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../utils/colors.dart';
 import '../widget/global_button.dart';
 import '../widget/global_text_field.dart';
@@ -26,47 +26,56 @@ class _SignUpScreenState extends State<SignUpScreen> {
         padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
         child: ListView(
           children: [
-            40.ph,
-            const   Center(child:  GlobalLogoName()),
-            40.ph,
-            const GlobalTextField(
-                icon: AppIcons.username,
-                hintText: "Enter your username",
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                // controller: context.read<AuthProvider>().emailController,
+
+            50.ph,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 80.0),
+              child: Text(
+                "Sign up b - Shop",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: AppColors.cFC6828),
+              ),
+            ),
+            70.ph,
+            GlobalTextField(
+              icon: AppIcons.username,
+              hintText: "Enter your username",
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.next,
+              controller: context.read<AuthProvider>().usernameController,
+
             ),
             20.ph,
-            const GlobalTextField(
+            GlobalTextField(
                 icon: AppIcons.email,
                 hintText: "Enter your email",
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
-                // controller: context.read<AuthProvider>().userNameController
-            ),
+                controller: context.read<AuthProvider>().emailController),
             20.ph,
-            const GlobalTextField(
+            GlobalTextField(
                 icon: AppIcons.password,
                 hintText: "Enter your password",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
-                // controller: context.read<AuthProvider>().passwordController
-          ),
-            20.ph,
-            const GlobalTextField(
-              icon: AppIcons.password,
-              hintText: "Confirm password",
-              keyboardType: TextInputType.text,
-              textInputAction: TextInputAction.done,
-              // controller: context.read<AuthProvider>().passwordController
+
+
+                controller: context.read<AuthProvider>().passwordController),
+            70.ph,
+            GlobalButton(
+              title: "Sign Up",
+              onTap: () {
+                context.read<AuthProvider>().signUpUser(context);
+              },
             ),
-            60.ph,
-            GlobalButton(title: "Sign Up", onTap: () {}),
             40.ph,
             const OrAuthWidget(),
-            40.ph,
-            const  Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 80),
+            50.ph,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 80),
+
               child: OtherAuthWays(),
             ),
             60.ph,
@@ -81,6 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 TextButton(
                   onPressed: () {
+                    context.read<AuthProvider>().loginPressed();
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

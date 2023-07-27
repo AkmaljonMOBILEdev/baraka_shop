@@ -14,11 +14,11 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   _init() async {
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 3));
 
     if (context.mounted) {
       Navigator.pushReplacementNamed(
-        context, RouteNames.signUpScreen
+        context, RouteNames.appScreen
       );
     }
   }
