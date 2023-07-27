@@ -1,6 +1,3 @@
 import 'package:flutter/cupertino.dart';
 
-class AuthProvider with ChangeNotifier{
-
-
-}
+class AuthProvider with ChangeNotifier{}

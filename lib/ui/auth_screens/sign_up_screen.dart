@@ -27,7 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: ListView(
           children: [
             40.ph,
-            const GlobalLogoName(),
+            const   Center(child:  GlobalLogoName()),
             40.ph,
             const GlobalTextField(
                 icon: AppIcons.username,
