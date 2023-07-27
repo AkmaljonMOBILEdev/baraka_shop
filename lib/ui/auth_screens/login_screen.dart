@@ -3,6 +3,8 @@ import 'package:baraka_shop/ui/auth_screens/widget/other_auth_ways.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../providers/auth_provider.dart';
 import '../../utils/colors.dart';
 import '../widget/global_button.dart';
 import 'sign_up_screen.dart';
@@ -42,10 +44,10 @@ class _LoginScreenState extends State<LoginScreen> {
             70.ph,
             GlobalTextField(
                 icon: AppIcons.username,
-                hintText: "Enter your username",
+                hintText: "Enter your email",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
-                // controller: context.read<AuthProvider>().emailController
+                controller: context.read<AuthProvider>().emailController
                 ),
             20.ph,
             GlobalTextField(
@@ -53,10 +55,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: "Enter you password",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
-                // controller: context.read<AuthProvider>().passwordController
+                controller: context.read<AuthProvider>().passwordController
             ),
             70.ph,
-            GlobalButton(title: "Login", onTap: () {}),
+            GlobalButton(title: "Login", onTap: () {
+              context.read<AuthProvider>().login(context);
+            }),
             40.ph,
             const OrAuthWidget(),
             50.ph,
@@ -76,6 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextButton(
                   onPressed: () {
+                    context.read<AuthProvider>().signUpPressed();
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
