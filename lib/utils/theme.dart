@@ -21,7 +21,7 @@ class AppTheme{
               color: AppColors.black,
               fontSize: 57.sp,
               fontWeight: FontWeight.w800,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           displayMedium: TextStyle(
               color: AppColors.black,
@@ -33,83 +33,83 @@ class AppTheme{
               color: AppColors.black,
               fontSize: 36.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //headline
           headlineLarge: TextStyle(
               color: AppColors.black,
               fontSize: 32.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           headlineMedium: TextStyle(
               color: AppColors.black,
               fontSize: 28.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           headlineSmall: TextStyle(
               color: AppColors.black,
               fontSize: 24.sp,
               fontWeight: FontWeight.w400,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //title
           titleLarge: TextStyle(
               color: AppColors.black,
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Poppins'
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Spartan'
           ),
           titleMedium: TextStyle(
               color: AppColors.black,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           titleSmall: TextStyle(
               color: AppColors.black,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //label
           labelLarge: TextStyle(
               color: AppColors.black,
               fontSize: 14.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           labelMedium: TextStyle(
               color: AppColors.black,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           labelSmall: TextStyle(
               color: AppColors.black,
               fontSize: 11.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //body
           bodyLarge: TextStyle(
               color: AppColors.black,
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           bodyMedium: TextStyle(
               color: AppColors.black,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           bodySmall: TextStyle(
               color: AppColors.black,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           )
 
       )
@@ -131,96 +131,96 @@ class AppTheme{
               color: AppColors.white,
               fontSize: 57.sp,
               fontWeight: FontWeight.w800,
-              fontFamily: 'SF Pro Text'
+              fontFamily: 'Spartan'
           ),
           displayMedium: TextStyle(
               color: AppColors.white,
               fontSize: 45.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           displaySmall: TextStyle(
               color: AppColors.white,
               fontSize: 36.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //headline
           headlineLarge: TextStyle(
               color: AppColors.white,
               fontSize: 32.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           headlineMedium: TextStyle(
               color: AppColors.white,
               fontSize: 28.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           headlineSmall: TextStyle(
               color: AppColors.white,
               fontSize: 24.sp,
               fontWeight: FontWeight.w400,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
 
           ),
           //title
           titleLarge: TextStyle(
               color: AppColors.white,
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Poppins'
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w600,
+              fontFamily: 'Spartan'
           ),
           titleMedium: TextStyle(
               color: AppColors.white,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           titleSmall: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //label
           labelLarge: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           labelMedium: TextStyle(
               color: AppColors.white,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           labelSmall: TextStyle(
               color: AppColors.white,
               fontSize: 11.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           //body
           bodyLarge: TextStyle(
               color: AppColors.white,
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           bodyMedium: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           ),
           bodySmall: TextStyle(
               color: AppColors.white,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins'
+              fontFamily: 'Spartan'
           )
 
       )

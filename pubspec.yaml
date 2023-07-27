@@ -22,6 +22,7 @@ dependencies:
   flutter_svg: ^2.0.7
   http: ^1.1.0
   provider: ^6.0.5
+  zoom_tap_animation: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -51,5 +52,6 @@ flutter:
          - asset: assets/fonts/LeagueSpartan-SemiBold.ttf
          - asset: assets/fonts/LeagueSpartan-Thin.ttf
          - asset: assets/fonts/Poppins-Regular.ttf
+
 
 

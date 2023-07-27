@@ -1,9 +1,23 @@
-import 'package:baraka_shop/ui/home_screen/home_screen.dart';
+import 'package:baraka_shop/providers/auth_provider.dart';
+import 'package:baraka_shop/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
-void main(){
-  runApp(MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => AuthProvider(),
+        lazy: true,
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,11 +30,12 @@ class MyApp extends StatelessWidget {
         designSize: Size(screenSize.width, screenSize.height),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (BuildContext context, Widget? child){
-      return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
-      );
-    });
+        builder: (BuildContext context, Widget? child) {
+          return  MaterialApp(
+            theme: ThemeData.dark(),
+            debugShowCheckedModeBanner: false,
+            home: SplashScreen(),
+          );
+        });
   }
 }
