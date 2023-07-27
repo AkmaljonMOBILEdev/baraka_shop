@@ -3,6 +3,8 @@ import 'package:baraka_shop/ui/auth_screens/widget/other_auth_ways.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../providers/auth_provider.dart';
 import '../../utils/colors.dart';
 import '../widget/global_button.dart';
 import '../widget/global_text_field.dart';
@@ -36,36 +38,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
             70.ph,
-            const GlobalTextField(
-                icon: AppIcons.username,
-                hintText: "Enter your username",
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                // controller: context.read<AuthProvider>().emailController,
+            GlobalTextField(
+              icon: AppIcons.username,
+              hintText: "Enter your username",
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.next,
+              controller: context.read<AuthProvider>().usernameController,
             ),
             20.ph,
-            const GlobalTextField(
+            GlobalTextField(
                 icon: AppIcons.email,
                 hintText: "Enter your email",
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
-                // controller: context.read<AuthProvider>().userNameController
-            ),
+                controller: context.read<AuthProvider>().emailController),
             20.ph,
-            const GlobalTextField(
+            GlobalTextField(
                 icon: AppIcons.password,
                 hintText: "Enter your password",
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
-                // controller: context.read<AuthProvider>().passwordController
-          ),
+                controller: context.read<AuthProvider>().passwordController),
             70.ph,
-            GlobalButton(title: "Sign Up", onTap: () {}),
+            GlobalButton(
+              title: "Sign Up",
+              onTap: () {
+                context.read<AuthProvider>().signUpUser(context);
+              },
+            ),
             40.ph,
             const OrAuthWidget(),
             50.ph,
-            const  Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 80),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 80),
               child: OtherAuthWays(),
             ),
             80.ph,
@@ -80,6 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 TextButton(
                   onPressed: () {
+                    context.read<AuthProvider>().loginPressed();
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

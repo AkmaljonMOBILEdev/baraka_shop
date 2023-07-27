@@ -9,7 +9,7 @@ class GlobalTextField extends StatelessWidget {
     required this.hintText,
     required this.keyboardType,
     required this.textInputAction,
-    // required this.controller,
+    required this.controller,
     required this.icon,
   }) : super(key: key);
 
@@ -17,8 +17,7 @@ class GlobalTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final String icon;
-
-  // final TextEditingController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class GlobalTextField extends StatelessWidget {
       ),
       textInputAction: textInputAction,
       keyboardType: keyboardType,
-      // controller: controller,
+      controller: controller,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.white,
