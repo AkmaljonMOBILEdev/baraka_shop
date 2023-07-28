@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:baraka_shop/ui/auth_screens/widget/or_auth_widget.dart';
 import 'package:baraka_shop/ui/auth_screens/widget/other_auth_ways.dart';
 import 'package:baraka_shop/ui/widget/global_logo_name.dart';
@@ -27,30 +28,43 @@ class SignUpPage extends StatelessWidget {
             50.ph,
            Center(child: GlobalLogoName(),),
             70.ph,
-            GlobalTextField(
-              icon: AppIcons.username,
-              hintText: "Enter your username",
-              keyboardType: TextInputType.text,
-              textInputAction: TextInputAction.next,
-              controller: context.read<AuthProvider>().usernameController,
+            FadeInRight(
+              child: GlobalTextField(
+                icon: AppIcons.username,
+                hintText: "Enter your username",
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.next,
+                controller: context.read<AuthProvider>().usernameController,
 
+              ),
             ),
             20.ph,
-            GlobalTextField(
-                icon: AppIcons.email,
-                hintText: "Enter your email",
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-                controller: context.read<AuthProvider>().emailController),
+            FadeInLeft(
+              child: GlobalTextField(
+                  icon: AppIcons.email,
+                  hintText: "Enter your email",
+                  keyboardType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
+                  controller: context.read<AuthProvider>().emailController),
+            ),
             20.ph,
-            GlobalTextField(
-                icon: AppIcons.password,
-                hintText: "Enter your password",
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.done,
-
-
-                controller: context.read<AuthProvider>().passwordController),
+            FadeInRight(
+              child: GlobalTextField(
+                  icon: AppIcons.password,
+                  hintText: "Enter your password",
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  controller: context.read<AuthProvider>().passwordController),
+            ),
+            20.ph,
+            FadeInRight(
+              child: GlobalTextField(
+                  icon: AppIcons.password,
+                  hintText: "Confirm  password",
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  controller: context.read<AuthProvider>().passwordController),
+            ),
             70.ph,
             GlobalButton(
               title: "Sign Up",

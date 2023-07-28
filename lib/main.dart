@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           return  MaterialApp(
             theme: ThemeData.dark(),
             debugShowCheckedModeBanner: false,
-            initialRoute: RouteNames.splashScreen,
+            initialRoute: RouteNames.tabBox,
             onGenerateRoute: AppRoute.generateRoute,
           );
         });
