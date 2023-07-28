@@ -23,12 +23,13 @@ class GlobalButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-              color: AppColors.white,
-              fontSize: 18.sp,
-              fontFamily: "LeagueSpartan",
-            ),
+            style:Theme.of(context).textTheme.titleLarge!.copyWith(color: AppColors.cFC6828,fontSize: 18),
+            // TextStyle(
+            //   fontWeight: FontWeight.w600,
+            //   color: AppColors.white,
+            //   fontSize: 18.sp,
+            //   fontFamily: "LeagueSpartan",
+            // ),
           ),
         ),
       ),

@@ -15,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   _init() async {
-    await Future.delayed(const Duration(seconds: 30));
+    await Future.delayed(const Duration(seconds: 2));
 
     if (context.mounted) {
       Navigator.pushReplacementNamed(
