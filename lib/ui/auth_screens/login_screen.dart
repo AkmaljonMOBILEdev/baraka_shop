@@ -21,65 +21,76 @@ final  VoidCallback voidCallback;
     return
       Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
-        child: ListView(
+        child: Column(
           children: [
-            70.ph,
-              FadeInLeft(child: Center(child:  GlobalLogoName(),)),
-            70.ph,
-             FadeInLeft(
-               child: GlobalTextField(
-                  icon: AppIcons.username,
-                  hintText: "Enter your email",
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  controller: context.read<AuthProvider>().emailController
-                  ),
-             ),
             20.ph,
-             FadeInRight(
-               child: GlobalTextField(
-                  icon: AppIcons.password,
-                  hintText: "Enter you password",
-                  keyboardType: TextInputType.visiblePassword,
-                  textInputAction: TextInputAction.done,
-                  controller: context.read<AuthProvider>().passwordController,
-            ),
-             ),
-            70.ph,
-            FadeInUpBig(
-              child: GlobalButton(
-                title: "Login",
-                onTap: () {
-                  context.read<AuthProvider>().signUpUser(context);
-                },
+            Expanded(
+              child: ListView(
+                physics: BouncingScrollPhysics(),
+                children: [
+                  70.ph,
+                    FadeInLeft(child: Center(child:  GlobalLogoName(),)),
+                  70.ph,
+                   FadeInLeft(
+                     child: GlobalTextField(
+                        icon: AppIcons.username,
+                        hintText: "Enter your email",
+                        keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.next,
+                        controller: context.read<AuthProvider>().emailController
+                        ),
+                   ),
+                  20.ph,
+                   FadeInRight(
+                     child: GlobalTextField(
+                        icon: AppIcons.password,
+                        hintText: "Enter you password",
+                        keyboardType: TextInputType.visiblePassword,
+                        textInputAction: TextInputAction.done,
+                        controller: context.read<AuthProvider>().passwordController,
+                  ),
+                   ),
+                  70.ph,
+                  FadeInUpBig(
+                    child: GlobalButton(
+                      title: "Login",
+                      onTap: () {
+                        context.read<AuthProvider>().signUpUser(context);
+                      },
+                    ),
+                  ),
+                  50.ph,
+                  const OrAuthWidget(),
+                  60.ph,
+                  const Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 80),
+                    child: OtherAuthWays(),
+                  ),
+                  60.ph,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don’t have an account?",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: AppColors.white,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          voidCallback.call();
+                          context.read<AuthProvider>().signUpPressed();
+                        },
+                        child:  Text("Sign Up",
+                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              fontSize: 19.sp, color: AppColors.c040415, fontWeight: FontWeight.w900
+                          )),
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
-            50.ph,
-            const OrAuthWidget(),
-            60.ph,
-            const Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 80),
-              child: OtherAuthWays(),
-            ),
-            100.ph,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don’t have an account?",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: AppColors.c040415.withOpacity(0.2),
-                      ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    voidCallback.call();
-                    context.read<AuthProvider>().signUpPressed();
-                  },
-                  child: const Text("Sign Up"),
-                ),
-              ],
-            )
           ],
         ),
       );

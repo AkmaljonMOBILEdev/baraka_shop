@@ -21,95 +21,95 @@ class AppTheme{
               color: AppColors.black,
               fontSize: 57.sp,
               fontWeight: FontWeight.w800,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           displayMedium: TextStyle(
               color: AppColors.black,
               fontSize: 45.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Poppins'
+              fontFamily: 'Capriola'
           ),
           displaySmall: TextStyle(
               color: AppColors.black,
               fontSize: 36.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //headline
           headlineLarge: TextStyle(
               color: AppColors.black,
               fontSize: 32.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           headlineMedium: TextStyle(
               color: AppColors.black,
               fontSize: 28.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           headlineSmall: TextStyle(
               color: AppColors.black,
               fontSize: 24.sp,
               fontWeight: FontWeight.w400,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //title
           titleLarge: TextStyle(
               color: AppColors.black,
               fontSize: 20.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           titleMedium: TextStyle(
               color: AppColors.black,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           titleSmall: TextStyle(
               color: AppColors.black,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //label
           labelLarge: TextStyle(
               color: AppColors.black,
               fontSize: 14.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           labelMedium: TextStyle(
               color: AppColors.black,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           labelSmall: TextStyle(
               color: AppColors.black,
               fontSize: 11.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //body
           bodyLarge: TextStyle(
               color: AppColors.black,
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           bodyMedium: TextStyle(
               color: AppColors.black,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           bodySmall: TextStyle(
               color: AppColors.black,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           )
 
       )
@@ -131,38 +131,38 @@ class AppTheme{
               color: AppColors.white,
               fontSize: 57.sp,
               fontWeight: FontWeight.w800,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           displayMedium: TextStyle(
               color: AppColors.white,
               fontSize: 45.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           displaySmall: TextStyle(
               color: AppColors.white,
               fontSize: 36.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //headline
           headlineLarge: TextStyle(
               color: AppColors.white,
               fontSize: 32.sp,
               fontWeight: FontWeight.w700,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           headlineMedium: TextStyle(
               color: AppColors.white,
               fontSize: 28.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           headlineSmall: TextStyle(
               color: AppColors.white,
               fontSize: 24.sp,
               fontWeight: FontWeight.w400,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
 
           ),
           //title
@@ -170,57 +170,57 @@ class AppTheme{
               color: AppColors.white,
               fontSize: 20.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           titleMedium: TextStyle(
               color: AppColors.white,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           titleSmall: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //label
           labelLarge: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           labelMedium: TextStyle(
               color: AppColors.white,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           labelSmall: TextStyle(
               color: AppColors.white,
               fontSize: 11.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           //body
           bodyLarge: TextStyle(
               color: AppColors.white,
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           bodyMedium: TextStyle(
               color: AppColors.white,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           ),
           bodySmall: TextStyle(
               color: AppColors.white,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Spartan'
+              fontFamily: 'Capriola'
           )
 
       )
