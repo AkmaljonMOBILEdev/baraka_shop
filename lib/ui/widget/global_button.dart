@@ -18,7 +18,7 @@ class GlobalButton extends StatelessWidget {
         height: 50.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.sp),
-          color: AppColors.white,
+          color: AppColors.c040415,
         ),
         child: Center(
           child: Text(

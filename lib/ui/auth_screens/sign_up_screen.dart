@@ -66,11 +66,13 @@ class SignUpPage extends StatelessWidget {
                   controller: context.read<AuthProvider>().passwordController),
             ),
             70.ph,
-            GlobalButton(
-              title: "Sign Up",
-              onTap: () {
-                context.read<AuthProvider>().signUpUser(context);
-              },
+            FadeInUpBig(
+              child: GlobalButton(
+                title: "Sign Up",
+                onTap: () {
+                  context.read<AuthProvider>().signUpUser(context);
+                },
+              ),
             ),
             40.ph,
             const OrAuthWidget(),

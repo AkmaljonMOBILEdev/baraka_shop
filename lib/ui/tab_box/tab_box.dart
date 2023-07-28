@@ -4,6 +4,8 @@ import 'package:baraka_shop/ui/tab_box/products/product_screen.dart';
 import 'package:baraka_shop/ui/tab_box/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/colors.dart';
+
 class TabBox extends StatefulWidget {
   const TabBox({super.key});
 
@@ -34,7 +36,7 @@ class _TabBoxState extends State<TabBox> {
       body: activeScreen[screenIndex],
       bottomNavigationBar:  BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        fixedColor: Color(0xff2398C3),
+        fixedColor: AppColors.cFC6828,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         currentIndex: screenIndex,
