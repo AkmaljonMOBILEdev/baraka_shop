@@ -30,7 +30,7 @@ final  VoidCallback voidCallback;
                child: GlobalTextField(
                   icon: AppIcons.username,
                   hintText: "Enter your email",
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                   controller: context.read<AuthProvider>().emailController
                   ),
@@ -40,7 +40,7 @@ final  VoidCallback voidCallback;
                child: GlobalTextField(
                   icon: AppIcons.password,
                   hintText: "Enter you password",
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
                   controller: context.read<AuthProvider>().passwordController,
             ),
