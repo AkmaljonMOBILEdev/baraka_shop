@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../providers/auth_provider.dart';
 import '../../utils/colors.dart';
+import '../widget/global_button.dart';
 import '../widget/global_text_field.dart';
 
 class LoginPage extends StatelessWidget {
@@ -44,7 +45,15 @@ final  VoidCallback voidCallback;
                   controller: context.read<AuthProvider>().passwordController,
             ),
              ),
-
+            70.ph,
+            FadeInUpBig(
+              child: GlobalButton(
+                title: "Login",
+                onTap: () {
+                  context.read<AuthProvider>().signUpUser(context);
+                },
+              ),
+            ),
             50.ph,
             const OrAuthWidget(),
             60.ph,
@@ -66,7 +75,6 @@ final  VoidCallback voidCallback;
                   onPressed: () {
                     voidCallback.call();
                     context.read<AuthProvider>().signUpPressed();
-
                   },
                   child: const Text("Sign Up"),
                 ),
