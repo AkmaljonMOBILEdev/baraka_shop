@@ -23,8 +23,8 @@ final  VoidCallback voidCallback;
         padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
         child: ListView(
           children: [
-            50.ph,
-            const  Center(child:  GlobalLogoName(),),
+            70.ph,
+              FadeInLeft(child: Center(child:  GlobalLogoName(),)),
             70.ph,
              FadeInLeft(
                child: GlobalTextField(
@@ -61,7 +61,7 @@ final  VoidCallback voidCallback;
               padding:  EdgeInsets.symmetric(horizontal: 80),
               child: OtherAuthWays(),
             ),
-            80.ph,
+            100.ph,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

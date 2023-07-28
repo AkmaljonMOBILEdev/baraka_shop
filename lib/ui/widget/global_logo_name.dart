@@ -16,7 +16,7 @@ class GlobalLogoName extends StatelessWidget {
         letterSpacing: 1.0,
           fontWeight: FontWeight.w900,
           fontSize: 35,
-          color: AppColors.cFC6828),
+          color: AppColors.white),
     );
   }
 }

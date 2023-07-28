@@ -25,9 +25,9 @@ class SignUpPage extends StatelessWidget {
         child: ListView(
           children: [
 
-            50.ph,
-           Center(child: GlobalLogoName(),),
-            70.ph,
+            20.ph,
+           FadeInLeft(child:const Center(child: GlobalLogoName(),)),
+            40.ph,
             FadeInRight(
               child: GlobalTextField(
                 icon: AppIcons.username,
@@ -57,7 +57,7 @@ class SignUpPage extends StatelessWidget {
                   controller: context.read<AuthProvider>().passwordController),
             ),
             20.ph,
-            FadeInRight(
+            FadeInLeft(
               child: GlobalTextField(
                   icon: AppIcons.password,
                   hintText: "Confirm  password",
