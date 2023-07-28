@@ -17,34 +17,35 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print("auth");
     return Scaffold(
       backgroundColor: AppColors.cFC6828,
-      body: Stack(
-        children: [
-          isLoginPage
-              ? LoginPage(
-            voidCallback: () {
-              setState(() {
-                isLoginPage = false;
-              });
-            },
-          )
-              : SignUpPage(
-            voidCallback: () {
-              setState(() {
-                isLoginPage = true;
-              });
-            },
-          ),
-          Visibility(
-            visible: context.watch<AuthProvider>().isLoading,
-            child:const Align(
-              alignment: Alignment.center,
-              child: CircularProgressIndicator(),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            isLoginPage
+                ? LoginPage(
+              voidCallback: () {
+                setState(() {
+                  isLoginPage = false;
+                });
+              },
+            )
+                : SignUpPage(
+              voidCallback: () {
+                setState(() {
+                  isLoginPage = true;
+                });
+              },
             ),
-          )
-        ],
+            Visibility(
+              visible: context.watch<AuthProvider>().isLoading,
+              child:const Align(
+                alignment: Alignment.center,
+                child: CircularProgressIndicator(),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

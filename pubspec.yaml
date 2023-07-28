@@ -44,6 +44,9 @@ flutter:
      - family: Spartan
        fonts:
          - asset: assets/fonts/LeagueSpartan-Regular.ttf
+     - family: Capriola
+       fonts:
+         - asset: assets/fonts/Capriola-Regular.ttf
 
 
 

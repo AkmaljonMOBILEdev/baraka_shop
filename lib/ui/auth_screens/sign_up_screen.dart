@@ -22,85 +22,99 @@ class SignUpPage extends StatelessWidget {
     return
       Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
-        child: ListView(
+        child: Column(
           children: [
+            20.ph,
+            Expanded(
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
+                children: [
+                  20.ph,
+                 FadeInLeft(child:const Center(child: GlobalLogoName(),)),
+                  40.ph,
+                  FadeInRight(
+                    child: GlobalTextField(
+                      icon: AppIcons.username,
+                      hintText: "Enter your username",
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                      controller: context.read<AuthProvider>().usernameController,
 
-            20.ph,
-           FadeInLeft(child:const Center(child: GlobalLogoName(),)),
-            40.ph,
-            FadeInRight(
-              child: GlobalTextField(
-                icon: AppIcons.username,
-                hintText: "Enter your username",
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                controller: context.read<AuthProvider>().usernameController,
+                    ),
+                  ),
+                  20.ph,
+                  FadeInLeft(
+                    child: GlobalTextField(
+                        icon: AppIcons.email,
+                        hintText: "Enter your email",
+                        keyboardType: TextInputType.emailAddress,
+                        textInputAction: TextInputAction.next,
+                        controller: context.read<AuthProvider>().emailController),
+                  ),
+                  20.ph,
+                  FadeInRight(
+                    child: GlobalTextField(
+                        icon: AppIcons.password,
+                        hintText: "Enter your password",
+                        keyboardType: TextInputType.text,
+                        textInputAction: TextInputAction.done,
+                        controller: context.read<AuthProvider>().passwordController),
+                  ),
+                  20.ph,
+                  FadeInLeft(
+                    child: GlobalTextField(
+                        icon: AppIcons.password,
+                        hintText: "Confirm  password",
+                        keyboardType: TextInputType.text,
+                        textInputAction: TextInputAction.done,
+                        controller: context.read<AuthProvider>().passwordController),
+                  ),
+                  50.ph,
+                  FadeInUpBig(
+                    child: GlobalButton(
+                      title: "Sign Up",
+                      onTap: () {
+                        context.read<AuthProvider>().signUpUser(context);
+                      },
+                    ),
+                  ),
+                  40.ph,
+                  const OrAuthWidget(),
+                  50.ph,
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 80),
 
-              ),
-            ),
-            20.ph,
-            FadeInLeft(
-              child: GlobalTextField(
-                  icon: AppIcons.email,
-                  hintText: "Enter your email",
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  controller: context.read<AuthProvider>().emailController),
-            ),
-            20.ph,
-            FadeInRight(
-              child: GlobalTextField(
-                  icon: AppIcons.password,
-                  hintText: "Enter your password",
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.done,
-                  controller: context.read<AuthProvider>().passwordController),
-            ),
-            20.ph,
-            FadeInLeft(
-              child: GlobalTextField(
-                  icon: AppIcons.password,
-                  hintText: "Confirm  password",
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.done,
-                  controller: context.read<AuthProvider>().passwordController),
-            ),
-            70.ph,
-            FadeInUpBig(
-              child: GlobalButton(
-                title: "Sign Up",
-                onTap: () {
-                  context.read<AuthProvider>().signUpUser(context);
-                },
-              ),
-            ),
-            40.ph,
-            const OrAuthWidget(),
-            50.ph,
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 80),
-
-              child: OtherAuthWays(),
-            ),
-            60.ph,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Do you have an account?",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: AppColors.c040415.withOpacity(0.2),
+                    child: OtherAuthWays(),
+                  ),
+                  20.ph,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Do you have an account?",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: AppColors.white,
+                            ),
                       ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    context.read<AuthProvider>().loginPressed();
-                   voidCallback.call();
-                  },
-                  child: const Text("Login"),
-                ),
-              ],
-            )
+                      TextButton(
+                        onPressed: () {
+                          context.read<AuthProvider>().loginPressed();
+                         voidCallback.call();
+                        },
+                        style: TextButton.styleFrom(
+                          // backgroundColor: AppColors.c040415,
+                          foregroundColor: AppColors.c040415,
+                        ),
+                        child:  Text("Login",style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                          fontSize: 19.sp, color: AppColors.c040415, fontWeight: FontWeight.w900
+                        ),),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       );

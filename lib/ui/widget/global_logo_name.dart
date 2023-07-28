@@ -13,10 +13,12 @@ class GlobalLogoName extends StatelessWidget {
           .textTheme
           .titleLarge!
           .copyWith(
+        fontFamily: 'Capriola',
         letterSpacing: 1.0,
           fontWeight: FontWeight.w900,
           fontSize: 35,
-          color: AppColors.white),
+          color: AppColors.white,
+      ),
     );
   }
 }
