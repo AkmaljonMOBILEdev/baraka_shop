@@ -2,6 +2,7 @@ import 'package:baraka_shop/utils/app_routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
 class AuthProvider with ChangeNotifier {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -100,6 +101,9 @@ class AuthProvider with ChangeNotifier {
       manageMessage(context, error.toString());
     }
   }
+
+
+
 
   // Future<void> loginWithGoogle()async{
   //   try{
