@@ -4,40 +4,28 @@ import 'package:baraka_shop/ui/widget/global_logo_name.dart';
 import 'package:baraka_shop/utils/icons.dart';
 import 'package:baraka_shop/utils/sizebox_extension.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import '../../providers/auth_provider.dart';
 import '../../utils/colors.dart';
 import '../widget/global_button.dart';
 import '../widget/global_text_field.dart';
-import 'login_screen.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key, required this.voidCallback}) : super(key: key);
 
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-}
+ final VoidCallback voidCallback;
 
-class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.cF9FAFB,
-      body: Padding(
+    return
+      Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
         child: ListView(
           children: [
 
             50.ph,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 80.0),
-              child: Text(
-                "Sign up b - Shop",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: AppColors.cFC6828),
-              ),
-            ),
+           Center(child: GlobalLogoName(),),
             70.ph,
             GlobalTextField(
               icon: AppIcons.username,
@@ -91,11 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 TextButton(
                   onPressed: () {
                     context.read<AuthProvider>().loginPressed();
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ));
+                   voidCallback.call();
                   },
                   child: const Text("Login"),
                 ),
@@ -103,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             )
           ],
         ),
-      ),
-    );
+      );
+
   }
 }
