@@ -19,12 +19,12 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.cFC6828,
         elevation: 0,
-        title: Text("profile screen"),
+        title: const Text("Profile screen"),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
-              context.read<AuthProvider>().logOut(context);
+              context.read<AuthProvider>().logout(context);
             },
             icon: const Icon(Icons.logout),
           ),
@@ -38,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
               Container(
                 height: 120,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                 color: AppColors.c040415,
               ),),
             ],),

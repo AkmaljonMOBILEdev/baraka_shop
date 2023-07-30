@@ -1,124 +1,103 @@
-import 'package:baraka_shop/utils/app_routes.dart';
+import 'package:baraka_shop/data/firebase/auth_services.dart';
+import 'package:baraka_shop/data/models/universal_data.dart';
+import 'package:baraka_shop/utils/ui_utils/error_message_dialog.dart';
+import 'package:baraka_shop/utils/ui_utils/loading_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/app_routes.dart';
 
 class AuthProvider with ChangeNotifier {
+  AuthProvider({
+    required this.authServices,
+  });
+
+  final AuthServices authServices;
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  bool isLoading = false;
-  String email = '';
-  String password = '';
 
-  getNeeds() {
-    email = emailController.text;
-    password = passwordController.text;
-  }
-
-  signUpPressed(){
+  signUpPressed() {
     usernameController.clear();
     emailController.clear();
     passwordController.clear();
   }
-  loginPressed(){
+
+  loginPressed() {
     emailController.clear();
     passwordController.clear();
   }
 
   Stream<User?> listenAuthState() => FirebaseAuth.instance.authStateChanges();
 
+  Future<void> signInWithGoogle(BuildContext context) async {
+    showLoading(context: context);
+    UniversalData universalData = await authServices.signInWithGoogle();
+    if (context.mounted) hideLoading(dialogContext: context);
+    if (universalData.error.isEmpty) {
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+        showConfirmMessage(message: "Signed in with Google", context: context);
+      } else {
+        if (context.mounted) {
+          showErrorMessage(message: universalData.error, context: context);
+        }
+      }
+    }
+  }
+
   Future<void> signUpUser(BuildContext context) async {
-    getNeeds();
-    try {
-      isLoading = true;
-      notifyListeners();
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      ).then((value){
-        if(value.user!=null){
-          return Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+    showLoading(context: context);
+    UniversalData universalData = await authServices.signUp(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+    if (context.mounted) hideLoading(dialogContext: context);
+    if (universalData.error.isEmpty) {
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+        showConfirmMessage(
+            message: "Welcome to Baraka Shop!", context: context);
+      } else {
+        if (context.mounted) {
+          showErrorMessage(message: universalData.error, context: context);
         }
-      });
-      isLoading = false;
-      notifyListeners();
-    } on FirebaseException catch (error) {
-      manageMessage(context, error.code);
-      if (error.code == 'weak-password') {
-        debugPrint('The password provided is too weak.');
-      } else if (error.code == 'email-already-in-use') {
-        debugPrint('The account already exists for that email.');
       }
-    } catch (error) {
-      manageMessage(context, error.toString());
     }
   }
 
-  Future<void> login(BuildContext context) async {
-    getNeeds();
-    try{
-      isLoading = true;
-      notifyListeners();
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      ).then((value){
-        if(value.user!=null){
-          return Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+  Future<void> loginUser(BuildContext context) async {
+    showLoading(context: context);
+    UniversalData universalData = await authServices.login(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+    if(context.mounted) hideLoading(dialogContext: context);
+    if(universalData.error.isEmpty){
+      if(context.mounted){
+        Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+        showConfirmMessage(message: "Welcome back!", context: context);
+      }else{
+        if(context.mounted){
+          showErrorMessage(message: universalData.error, context: context);
         }
-      });
-      isLoading=false;
-      notifyListeners();
-    }on FirebaseException catch(error){
-      manageMessage(context, error.code);
-      if (error.code == 'weak-password') {
-        debugPrint('The password provided is too weak.');
-      } else if (error.code == 'email-already-in-use') {
-        debugPrint('The account already exists for that email.');
       }
-    } catch (error) {
-      manageMessage(context, error.toString());
-    }
-
-    }
-
-  Future<void> logOut(BuildContext context)async{
-    try{
-      isLoading=true;
-      notifyListeners();
-      await FirebaseAuth.instance.signOut().then((value) => Navigator.pushReplacementNamed(context, RouteNames.loginScreen));
-      isLoading=false;
-      notifyListeners();
-    }on FirebaseException catch(error){
-      manageMessage(context, error.code);
-      if (error.code == 'weak-password') {
-        debugPrint('The password provided is too weak.');
-      } else if (error.code == 'email-already-in-use') {
-        debugPrint('The account already exists for that email.');
-      }
-    } catch (error) {
-      manageMessage(context, error.toString());
     }
   }
 
-
-
-
-  // Future<void> loginWithGoogle()async{
-  //   try{
-  //     isLoading=true;
-  //     notifyListeners();
-  //     await FirebaseAuth.instance.
-  //     isLoading=false;
-  //     notifyListeners();
-  //   }
-  // }
-
-  manageMessage(BuildContext context, String error) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error)));
-    isLoading = false;
-    notifyListeners();
+  Future<void> logout(BuildContext context)async{
+    showLoading(context: context);
+    UniversalData universalData = await authServices.logOut();
+    if(context.mounted) hideLoading(dialogContext: context);
+    if(universalData.error.isEmpty){
+      if(context.mounted){
+        Navigator.pop(context);
+        showConfirmMessage(message: universalData.data as String, context: context);
+      }else{
+        if(context.mounted){
+          showErrorMessage(message: universalData.error, context: context);
+        }
+      }
+    }
   }
 }
-
