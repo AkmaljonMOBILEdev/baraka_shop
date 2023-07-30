@@ -1,3 +1,4 @@
+import 'package:baraka_shop/data/firebase/auth_services.dart';
 import 'package:baraka_shop/providers/auth_provider.dart';
 import 'package:baraka_shop/utils/app_routes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -11,7 +12,7 @@ Future<void> main()async{
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
-        create: (context) => AuthProvider(),
+        create: (context) => AuthProvider(authServices: AuthServices()),
         lazy: true,
       ),
     ],

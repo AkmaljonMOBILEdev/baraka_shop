@@ -1,10 +1,10 @@
 import 'package:baraka_shop/ui/tab_box/category/category.dart';
-import 'package:baraka_shop/ui/tab_box/favorite_/favorite_screen.dart';
 import 'package:baraka_shop/ui/tab_box/products/product_screen.dart';
 import 'package:baraka_shop/ui/tab_box/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/colors.dart';
+import 'favorites/favorite_screen.dart';
 
 class TabBox extends StatefulWidget {
   const TabBox({super.key});
@@ -23,7 +23,7 @@ class _TabBoxState extends State<TabBox> {
     activeScreen = [
      ProductScreen(),
       CategoryScreen(),
-      FavoriteScreen(),
+      FavoritesScreen(),
       ProfileScreen(),
 
     ];
