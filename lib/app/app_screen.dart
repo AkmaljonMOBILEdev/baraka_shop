@@ -1,4 +1,4 @@
-import 'package:baraka_shop/ui/auth_screens/auth_screen.dart';
+import 'package:baraka_shop/ui/auth_screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../ui/tab_box/tab_box.dart';
@@ -10,8 +10,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: (FirebaseAuth.instance.currentUser == null)
-          ? AuthScreen()
-          : TabBox()
+          ? const LoginScreen()
+          : const TabBox()
 
     );
   }

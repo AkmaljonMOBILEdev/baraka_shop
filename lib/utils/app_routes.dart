@@ -20,10 +20,10 @@ class AppRoute{
         return MaterialPageRoute(builder: (context)=>const SplashScreen());
       case RouteNames.appScreen:
         return MaterialPageRoute(builder: (context)=>const App());
-      // case RouteNames.loginScreen:
-      //   return MaterialPageRoute(builder: (context)=>const LoginPage());
-      // case RouteNames.signUpScreen:
-      //   return MaterialPageRoute(builder: (context)=>const SignUpPage());
+      case RouteNames.loginScreen:
+        return MaterialPageRoute(builder: (context)=> const LoginScreen());
+      case RouteNames.signUpScreen:
+        return MaterialPageRoute(builder: (context)=> const SignUpScreen());
       case RouteNames.tabBox:
         return MaterialPageRoute(builder: (context)=>const TabBox());
       default:
