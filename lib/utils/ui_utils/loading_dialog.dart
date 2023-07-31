@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
 import 'custom_circular.dart';
 
 
@@ -14,11 +17,19 @@ void showLoading({required BuildContext context}) {
         child: Container(
           alignment: AlignmentDirectional.center,
           decoration: const BoxDecoration(),
+
+          child: Center(
+            child: SizedBox(
+              height: 70.0.h,
+              width: 70.0.w,
+              child: const CustomCircularProgressIndicator(strokeWidth: 6,),
+
           child: const Center(
             child: SizedBox(
               height: 70.0,
               width: 70.0,
               child: CustomCircularProgressIndicator(strokeWidth: 6,),
+
             ),
           ),
         ),

@@ -1,6 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../colors.dart';
+
+
+
+
 import '../colors.dart';
 
 void showErrorMessage({
@@ -17,11 +24,19 @@ void showErrorMessage({
         style: TextStyle(fontWeight: FontWeight.w800),
       ),
       content: Padding(
+
+        padding: EdgeInsets.only(top: 10.h),
+        child: Text(
+          message,
+          style:
+              TextStyle(fontWeight: FontWeight.w500, color: AppColors.c040415),
+
         padding: const EdgeInsets.only(top: 10),
         child: Text(
           message,
           style:
               const TextStyle(fontWeight: FontWeight.w500, color: AppColors.white),
+
         ),
       ),
       actions: [
@@ -46,11 +61,19 @@ Future<void> showConfirmMessage({
     builder: (BuildContext context) => AlertDialog(
       backgroundColor: Colors.white,
       content: Padding(
+
+        padding: EdgeInsets.only(top: 10.h),
+        child: Text(
+          message,
+          style:
+              TextStyle(fontWeight: FontWeight.w500, color: AppColors.c040415),
+
         padding: const EdgeInsets.only(top: 10),
         child: Text(
           message,
           style:
               const TextStyle(fontWeight: FontWeight.w500, color: AppColors.white),
+
         ),
       ),
       actions: [
