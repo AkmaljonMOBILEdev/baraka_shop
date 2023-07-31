@@ -1,6 +1,10 @@
+
 import 'dart:io';
 import 'package:baraka_shop/data/firebase/order_service.dart';
 import 'package:baraka_shop/data/firebase/profile_service.dart';
+
+import 'package:baraka_shop/data/firebase/auth_services.dart';
+
 import 'package:baraka_shop/providers/auth_provider.dart';
 import 'package:baraka_shop/providers/category_provider.dart';
 import 'package:baraka_shop/providers/order_provider.dart';
@@ -22,6 +26,7 @@ Future<void> main()async{
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
+
         create: (context) => AuthProvider(firebaseServices: AuthService()),
         lazy: true,
       ),
@@ -46,6 +51,9 @@ Future<void> main()async{
       ChangeNotifierProvider(
         create: (context) =>
             OrderProvider( OrderService()),
+
+        create: (context) => AuthProvider(authServices: AuthServices()),
+
         lazy: true,
       ),
     ],

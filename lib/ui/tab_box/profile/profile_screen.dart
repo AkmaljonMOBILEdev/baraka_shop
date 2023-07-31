@@ -21,13 +21,24 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.cFC6828,
         elevation: 0,
-        title: Text("profile screen"),
+        title: const Text("Profile screen"),
         centerTitle: true,
+
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.read<AuthProvider>().logout(context);
+            },
+            icon: const Icon(Icons.logout),
+          ),
+        ],
+
       ),
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
+
             SizedBox(
               height: 20.h,
             ),
@@ -88,6 +99,37 @@ class ProfileScreen extends StatelessWidget {
                 title: const Text(
                   "Log Out",
                   style: TextStyle(color: Colors.white),
+
+            Stack(children: [
+              Container(
+                height: 120,
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                color: AppColors.c040415,
+              ),),
+            ],),
+            Expanded(
+            child: ListView(
+              children: [
+                70.ph,
+                FadeInLeft(
+                  child: GlobalTextField(
+                      icon: AppIcons.username,
+                      hintText: "Enter your email",
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                      controller: context.read<AuthProvider>().emailController),
+                ),
+                20.ph,
+                FadeInRight(
+                  child: GlobalTextField(
+                    icon: AppIcons.password,
+                    hintText: "Enter you password",
+                    keyboardType: TextInputType.visiblePassword,
+                    textInputAction: TextInputAction.done,
+                    controller: context.read<AuthProvider>().passwordController,
+                  ),
+
                 ),
                 trailing: const Icon(
                   Icons.exit_to_app_outlined,

@@ -18,8 +18,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Scaffold(
+    return Scaffold(
         backgroundColor: AppColors.cFC6828,
         body: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
@@ -57,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                       child: GlobalButton(
                         title: "Login",
                         onTap: () {
-                          context.read<AuthProvider>().login(context);
+                          context.read<AuthProvider>().loginUser(context);
                         },
                       ),
                     ),

@@ -14,19 +14,32 @@ class OtherAuthWays extends StatelessWidget {
     return Row(
       children: [
         ZoomTapAnimation(
-          child: Container(
-              child: Image.asset(
+          child: Image.asset(
             AppImages.facebook,
             height: 40.h,
             width: 40.w,
-          )),
+          ),
         ),
         24.pw,
+
         ZoomTapAnimation(onTap:(){
           context.read<AuthProvider>().signInWithGoogle(context);
         },child: Container(child: Image.asset(AppImages.google, height: 40.h, width: 40.w,),),),
+
+        ZoomTapAnimation(
+          onTap: () {
+            context.read<AuthProvider>().signInWithGoogle(context);
+          },
+          child: Image.asset(
+            AppImages.google,
+            height: 40.h,
+            width: 40.w,
+          ),
+        ),
+
         24.pw,
-        ZoomTapAnimation(child: Container(child: Image.asset(AppImages.ios, height: 40.h, width: 40.w))),
+        ZoomTapAnimation(
+            child: Image.asset(AppImages.ios, height: 40.h, width: 40.w)),
       ],
     );
   }
