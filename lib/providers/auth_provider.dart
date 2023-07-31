@@ -1,9 +1,19 @@
 import 'package:baraka_shop/utils/app_routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../data/firebase/auth_service.dart';
+import '../data/models/universal_data.dart';
+import '../utils/ui_utils/loading_dialog.dart';
 
 
 class AuthProvider with ChangeNotifier {
+
+  AuthProvider({required this.firebaseServices}) {
+    notifyy();
+  }
+  final AuthService firebaseServices;
+
+
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -24,6 +34,28 @@ class AuthProvider with ChangeNotifier {
   loginPressed(){
     emailController.clear();
     passwordController.clear();
+  }
+
+  User? usser = FirebaseAuth.instance.currentUser;
+  bool isuservisible = true;
+  bool isadminvisible = true;
+
+
+  notifyy() {
+    print(isadminvisible);
+    if(usser!=null){
+      if (usser!.email!.contains(
+        "admin",
+      )) {
+        isadminvisible = true;
+        isuservisible = false;
+        notifyListeners();
+      } else {
+        isuservisible = true;
+        isadminvisible = false;
+        notifyListeners();
+      }
+    }
   }
 
   Stream<User?> listenAuthState() => FirebaseAuth.instance.authStateChanges();
@@ -105,15 +137,20 @@ class AuthProvider with ChangeNotifier {
 
 
 
-  // Future<void> loginWithGoogle()async{
-  //   try{
-  //     isLoading=true;
-  //     notifyListeners();
-  //     await FirebaseAuth.instance.
-  //     isLoading=false;
-  //     notifyListeners();
-  //   }
-  // }
+  Future<void> signInWithGoogle(BuildContext context) async {
+    showLoading(context: context);
+    UniversalData universalData = await firebaseServices.signInWithGoogle();
+
+    if (universalData.error.isEmpty) {
+      if (context.mounted) {
+        manageMessage(context, "User Signed Up with Google.");
+      }
+    } else {
+      if (context.mounted) {
+        manageMessage(context, universalData.error);
+      }
+    }
+  }
 
   manageMessage(BuildContext context, String error) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error)));
