@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import 'data/firebase/auth_service.dart';
+import 'app/auth_service.dart';
 import 'data/firebase/category_service.dart';
 import 'data/firebase/products_service.dart';
 
@@ -26,8 +26,7 @@ Future<void> main()async{
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
-
-        create: (context) => AuthProvider(firebaseServices: AuthService()),
+        create: (context) => AuthProvider(firebaseServices: AuthServices()),
         lazy: true,
       ),
      ChangeNotifierProvider(
@@ -48,14 +47,13 @@ Future<void> main()async{
             CategoryProvider(categoryService: CategoryService()),
         lazy: true,
       ),
-      ChangeNotifierProvider(
-        create: (context) =>
-            OrderProvider( OrderService()),
-
-        create: (context) => AuthProvider(authServices: AuthServices()),
-
-        lazy: true,
-      ),
+      // ChangeNotifierProvider(
+      //   create: (context) =>
+      //       OrderProvider( OrderService()),
+      //   create: (context) => AuthProvider( firebaseServices:  AuthServices()),
+      //
+      //   lazy: true,
+      // ),
     ],
     child: const MyApp(),
   ));

@@ -41,7 +41,7 @@ class AuthServices {
     }
   }
 
-  Future<UniversalData> logOut() async {
+  Future<UniversalData> logOutUser() async {
     try {
       await FirebaseAuth.instance.signOut();
       return UniversalData(data: "User logged out!");

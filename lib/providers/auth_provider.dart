@@ -1,13 +1,11 @@
-import 'package:baraka_shop/data/firebase/auth_services.dart';
 import 'package:baraka_shop/data/models/universal_data.dart';
 import 'package:baraka_shop/utils/ui_utils/error_message_dialog.dart';
 import 'package:baraka_shop/utils/ui_utils/loading_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../data/firebase/auth_service.dart';
-import '../data/models/universal_data.dart';
-import '../utils/ui_utils/loading_dialog.dart';
 
+
+import '../data/firebase/auth_services.dart';
 import '../utils/app_routes.dart';
 
 class AuthProvider with ChangeNotifier {
@@ -16,16 +14,15 @@ class AuthProvider with ChangeNotifier {
   AuthProvider({required this.firebaseServices}) {
     notifyy();
   }
-  final AuthService firebaseServices;
+  final AuthServices firebaseServices;
 
 
 
-  AuthProvider({
-    required this.authServices,
-  });
-
-  final AuthServices authServices;
-
+  // AuthProvider({
+  //   required this.authServices,
+  // });
+  // final AuthServices authServices;
+  var isLoading = false;
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -67,7 +64,7 @@ class AuthProvider with ChangeNotifier {
 
   Future<void> signInWithGoogle(BuildContext context) async {
     showLoading(context: context);
-    UniversalData universalData = await authServices.signInWithGoogle();
+    UniversalData universalData = await firebaseServices.signInWithGoogle();
     if (context.mounted) hideLoading(dialogContext: context);
     if (universalData.error.isEmpty) {
       if (context.mounted) {
@@ -83,7 +80,7 @@ class AuthProvider with ChangeNotifier {
 
   Future<void> signUpUser(BuildContext context) async {
     showLoading(context: context);
-    UniversalData universalData = await authServices.signUp(
+    UniversalData universalData = await firebaseServices.signUp(
       email: emailController.text,
       password: passwordController.text,
     );
@@ -103,7 +100,7 @@ class AuthProvider with ChangeNotifier {
 
   Future<void> loginUser(BuildContext context) async {
     showLoading(context: context);
-    UniversalData universalData = await authServices.login(
+    UniversalData universalData = await firebaseServices.login(
       email: emailController.text,
       password: passwordController.text,
     );
@@ -120,33 +117,46 @@ class AuthProvider with ChangeNotifier {
     }
   }
 
-
-
-
-
-  Future<void> signInWithGoogle(BuildContext context) async {
+  Future<void> logOutUser(BuildContext context) async {
     showLoading(context: context);
-    UniversalData universalData = await firebaseServices.signInWithGoogle();
+    UniversalData universalData = await firebaseServices.logOutUser();
 
     if (universalData.error.isEmpty) {
       if (context.mounted) {
-        manageMessage(context, "User Signed Up with Google.");
+        showErrorMessage(message: universalData.error, context: context);
       }
     } else {
       if (context.mounted) {
-        manageMessage(context, universalData.error);
+        showErrorMessage(message: universalData.error, context: context);
       }
     }
   }
 
+
+
+  // Future<void> signInWithGoogle(BuildContext context) async {
+  //   showLoading(context: context);
+  //   UniversalData universalData = await firebaseServices.signInWithGoogle();
+  //
+  //   if (universalData.error.isEmpty) {
+  //     if (context.mounted) {
+  //       manageMessage(context, "User Signed Up with Google.");
+  //     }
+  //   } else {
+  //     if (context.mounted) {
+  //       manageMessage(context, universalData.error);
+  //     }
+  //   }
+  // }
+
   manageMessage(BuildContext context, String error) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error)));
-    isLoading = false;
+     isLoading = false;
     notifyListeners();
 
   Future<void> logout(BuildContext context)async{
     showLoading(context: context);
-    UniversalData universalData = await authServices.logOut();
+    UniversalData universalData = await firebaseServices.logOutUser();
     if(context.mounted) hideLoading(dialogContext: context);
     if(universalData.error.isEmpty){
       if(context.mounted){
@@ -160,4 +170,4 @@ class AuthProvider with ChangeNotifier {
     }
 
   }
-}
+}}
