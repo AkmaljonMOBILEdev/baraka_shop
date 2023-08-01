@@ -62,15 +62,7 @@ class SignUpScreen extends StatelessWidget {
                           textInputAction: TextInputAction.done,
                           controller: context.read<AuthProvider>().passwordController),
                     ),
-                    20.ph,
-                    FadeInLeft(
-                      child: GlobalTextField(
-                          icon: AppIcons.password,
-                          hintText: "Confirm  password",
-                          keyboardType: TextInputType.text,
-                          textInputAction: TextInputAction.done,
-                          controller: context.read<AuthProvider>().passwordController),
-                    ),
+
                     50.ph,
                     FadeInUpBig(
                       child: GlobalButton(

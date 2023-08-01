@@ -1,11 +1,11 @@
 class UniversalData {
-  dynamic data;
-  String error;
-  int statusCode;
-
   UniversalData({
-    this.data,
     this.error = "",
-    this.statusCode = 0,
+    this.data,
+    this.statusCode = 0
   });
+
+  String error;
+  dynamic data;
+  int statusCode;
 }
