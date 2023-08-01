@@ -1,8 +1,4 @@
 
-import 'package:baraka_shop/ui/tab_box/favorite_/favorite_screen.dart';
-
-import 'package:baraka_shop/ui/tab_box/category/category.dart';
-
 import 'package:baraka_shop/ui/tab_box/products/product_screen.dart';
 import 'package:baraka_shop/ui/tab_box/profile/profile_screen.dart';
 import 'package:flutter/material.dart';

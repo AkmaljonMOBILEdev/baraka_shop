@@ -286,7 +286,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-
   flutter_blurhash:
     dependency: transitive
     description:
@@ -303,7 +302,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.1"
-
   flutter_facebook_auth:
     dependency: "direct main"
     description:
@@ -328,7 +326,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
-
   flutter_lints:
     dependency: "direct dev"
     description:
