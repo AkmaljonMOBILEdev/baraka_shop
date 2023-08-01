@@ -1,13 +1,11 @@
 
 import 'dart:io';
-import 'package:baraka_shop/data/firebase/order_service.dart';
 import 'package:baraka_shop/data/firebase/profile_service.dart';
 
 import 'package:baraka_shop/data/firebase/auth_services.dart';
 
 import 'package:baraka_shop/providers/auth_provider.dart';
 import 'package:baraka_shop/providers/category_provider.dart';
-import 'package:baraka_shop/providers/order_provider.dart';
 import 'package:baraka_shop/providers/products_provider.dart';
 import 'package:baraka_shop/providers/profiles_provider.dart';
 import 'package:baraka_shop/utils/app_routes.dart';
@@ -16,7 +14,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import 'app/auth_service.dart';
 import 'data/firebase/category_service.dart';
 import 'data/firebase/products_service.dart';
 

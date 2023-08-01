@@ -21,11 +21,7 @@ class OtherAuthWays extends StatelessWidget {
           ),
         ),
         24.pw,
-
-        ZoomTapAnimation(onTap:(){
-          context.read<AuthProvider>().signInWithGoogle(context);
-        },child: Container(child: Image.asset(AppImages.google, height: 40.h, width: 40.w,),),),
-
+        
         ZoomTapAnimation(
           onTap: () {
             context.read<AuthProvider>().signInWithGoogle(context);

@@ -86,8 +86,12 @@ class AuthProvider with ChangeNotifier {
     );
     if (context.mounted) hideLoading(dialogContext: context);
     if (universalData.error.isEmpty) {
-      if (context.mounted) {
-        Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+      if (context.mounted ) {
+        if(emailController.text.contains("admin")){
+          Navigator.pushReplacementNamed(context, RouteNames.adTabBox);
+        }else{
+          Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+        }
         showConfirmMessage(
             message: "Welcome to Baraka Shop!", context: context);
       } else {
@@ -107,7 +111,12 @@ class AuthProvider with ChangeNotifier {
     if(context.mounted) hideLoading(dialogContext: context);
     if(universalData.error.isEmpty){
       if(context.mounted){
-        Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+        if(emailController.text.contains("admin")){
+          Navigator.pushReplacementNamed(context, RouteNames.adTabBox);
+        }else{
+          Navigator.pushReplacementNamed(context, RouteNames.tabBox);
+
+        }
         showConfirmMessage(message: "Welcome back!", context: context);
       }else{
         if(context.mounted){

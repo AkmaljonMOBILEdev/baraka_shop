@@ -33,10 +33,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.cFC6828,
+      backgroundColor: AppColors.c442C2E,
       appBar: AppBar(
-        backgroundColor: AppColors.cFC6828,
-        elevation: 0,
+        backgroundColor: AppColors.c442C2E,
       ),
       body: Center(
         child: Column(
@@ -73,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 .copyWith(
                               fontSize: 40,
                               fontWeight: FontWeight.w800,
-                                  color: AppColors.cFC6828,
+                                  color: AppColors.cFEEAE6,
                                 ),),
                       )
                     ],
