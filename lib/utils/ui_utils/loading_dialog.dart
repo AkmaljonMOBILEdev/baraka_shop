@@ -22,18 +22,18 @@ void showLoading({required BuildContext context}) {
             child: SizedBox(
               height: 70.0.h,
               width: 70.0.w,
-              child: const CustomCircularProgressIndicator(strokeWidth: 6,),
+              child:  CustomCircularProgressIndicator( ),
 
-          child: const Center(
-            child: SizedBox(
-              height: 70.0,
-              width: 70.0,
-              child: CustomCircularProgressIndicator(strokeWidth: 6,),
-
-            ),
+          // child: const Center(
+          //   child: SizedBox(
+          //     height: 70.0,
+          //     width: 70.0,
+          //     child: CustomCircularProgressIndicator(strokeWidth: 6,),
+          //
+          //   ),
           ),
         ),
-      );
+      ));
     },
   );
 }

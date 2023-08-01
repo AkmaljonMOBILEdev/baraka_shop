@@ -8,8 +8,7 @@ class CustomCircularProgressIndicator extends StatelessWidget {
   final double? strokeWidth;
  final BuildContext? context;
 
-class CustomCircularProgressIndicator extends StatelessWidget {
-  final double? strokeWidth;
+
 
 
   const CustomCircularProgressIndicator({
@@ -24,21 +23,15 @@ class CustomCircularProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     if (strokeWidth == 4.0 || strokeWidth == null) {
 
-      return CircularProgressIndicator(
+      return const CircularProgressIndicator(
         strokeWidth: 5,
         valueColor: AlwaysStoppedAnimation<Color>(AppColors.c040415),
 
-      return const CircularProgressIndicator(
-        strokeWidth: 2,
-
       );
     } else {
-      return CircularProgressIndicator(
-        strokeWidth: strokeWidth!,
+      return const CircularProgressIndicator(
+      valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
 
-        valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
-
-        valueColor: const AlwaysStoppedAnimation<Color>(AppColors.white),
 
       );
     }
