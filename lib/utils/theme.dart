@@ -5,12 +5,15 @@ import 'colors.dart';
 
 class AppTheme{
   static ThemeData lightTheme=ThemeData(
-      scaffoldBackgroundColor: AppColors.white,
+      scaffoldBackgroundColor: AppColors.c246EE9,
       appBarTheme: const AppBarTheme(
           elevation: 0,
-          backgroundColor: AppColors.white,
+          backgroundColor: AppColors.c246EE9,
+          titleTextStyle: TextStyle(
+              color: AppColors.c442C2E
+          ),
           systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: AppColors.white,
+              statusBarColor: AppColors.c246EE9,
               statusBarBrightness: Brightness.dark,
               statusBarIconBrightness: Brightness.dark
           )
@@ -18,57 +21,57 @@ class AppTheme{
       textTheme:  TextTheme(
         //display
           displayLarge: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 57.sp,
               fontWeight: FontWeight.w800,
               fontFamily: 'Capriola'
           ),
           displayMedium: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 45.sp,
               fontWeight: FontWeight.w700,
               fontFamily: 'Capriola'
           ),
           displaySmall: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 36.sp,
               fontWeight: FontWeight.w600,
               fontFamily: 'Capriola'
           ),
           //headline
           headlineLarge: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 32.sp,
               fontWeight: FontWeight.w700,
               fontFamily: 'Capriola'
           ),
           headlineMedium: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 28.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
           ),
           headlineSmall: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 24.sp,
               fontWeight: FontWeight.w400,
               fontFamily: 'Capriola'
           ),
           //title
           titleLarge: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 20.sp,
               fontWeight: FontWeight.w600,
               fontFamily: 'Capriola'
           ),
           titleMedium: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
               fontFamily: 'Capriola'
           ),
           titleSmall: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
@@ -81,32 +84,32 @@ class AppTheme{
               fontFamily: 'Capriola'
           ),
           labelMedium: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
           ),
           labelSmall: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 11.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
           ),
           //body
           bodyLarge: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
           ),
           bodyMedium: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
           ),
           bodySmall: TextStyle(
-              color: AppColors.black,
+              color: AppColors.c442C2E,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
               fontFamily: 'Capriola'
